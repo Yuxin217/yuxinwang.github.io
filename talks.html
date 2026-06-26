@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<title>Talks — Yuxin Wang</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yuxin Wang</title>
-<meta name="description" content="Yuxin Wang — PhD Researcher at LMU Munich. Research in causal machine learning: semiparametric estimation, off-policy evaluation, and policy learning.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -27,179 +26,81 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-
-  /* Top Navigation */
-  nav.topnav {
-    border-bottom: 1px solid var(--line);
-    padding: 0 24px;
-  }
+  nav.topnav { border-bottom: 1px solid var(--line); padding: 0 24px; }
   .topnav-inner {
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    align-items: stretch;
-    gap: 32px;
-    height: 54px;
+    max-width: 960px; margin: 0 auto;
+    display: flex; align-items: stretch; gap: 32px; height: 54px;
   }
   .site-name {
-    font-weight: 700;
-    font-size: 17px;
-    color: var(--ink);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid var(--ink);
-    margin-bottom: -1px;
+    font-weight: 700; font-size: 17px; color: var(--ink);
+    text-decoration: none; display: flex; align-items: center;
   }
+  .site-name:hover { color: var(--accent); }
   .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    list-style: none;
-    margin-left: auto;
+    display: flex; align-items: stretch; gap: 28px;
+    list-style: none; margin-left: auto;
   }
+  .nav-links li { display: flex; align-items: stretch; }
   .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 16px;
+    color: var(--muted); text-decoration: none; font-size: 16px;
+    display: flex; align-items: center;
     transition: color .15s;
   }
   .nav-links a:hover { color: var(--ink); }
-
-  /* Two-Column Layout */
+  .nav-links a.active {
+    color: var(--ink); font-weight: 700;
+    border-bottom: 2px solid var(--ink); margin-bottom: -1px;
+  }
   .outer {
-    max-width: 960px;
-    margin: 0 auto;
+    max-width: 960px; margin: 0 auto;
     padding: 48px 24px 80px;
-    display: flex;
-    gap: 56px;
-    align-items: flex-start;
+    display: flex; gap: 56px; align-items: flex-start;
   }
-
-  /* Left Sidebar */
-  .sidebar {
-    width: 210px;
-    flex-shrink: 0;
-  }
+  .sidebar { width: 210px; flex-shrink: 0; }
   .sidebar .photo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    background: #ecebe6;
-    margin-bottom: 18px;
+    width: 180px; height: 180px; border-radius: 50%;
+    object-fit: cover; display: block; background: #ecebe6; margin-bottom: 18px;
   }
   .sidebar .monogram {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #eceae3;
-    color: #666;
-    font-size: 52px;
-    font-weight: 300;
-    margin-bottom: 18px;
+    width: 180px; height: 180px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: #eceae3; color: #666; font-size: 52px; font-weight: 300; margin-bottom: 18px;
   }
-  .s-name {
-    font-weight: 700;
-    font-size: 17px;
-    margin-bottom: 5px;
-  }
-  .s-title {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.45;
-    margin-bottom: 18px;
-  }
-  .s-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-  }
-  .s-links li {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    font-size: 14.5px;
-  }
-  .s-links .icon {
-    width: 15px;
-    height: 15px;
-    color: var(--muted);
-    flex-shrink: 0;
-  }
-  .s-links a {
-    color: var(--ink);
-    text-decoration: none;
-    transition: color .15s;
-  }
+  .s-name { font-weight: 700; font-size: 17px; margin-bottom: 5px; }
+  .s-title { color: var(--muted); font-size: 14px; line-height: 1.45; margin-bottom: 18px; }
+  .s-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .s-links li { display: flex; align-items: center; gap: 9px; font-size: 14.5px; }
+  .s-links .icon { width: 15px; height: 15px; color: var(--muted); flex-shrink: 0; }
+  .s-links a { color: var(--ink); text-decoration: none; transition: color .15s; }
   .s-links a:hover { color: var(--accent); }
   .s-links .loc-text { color: var(--muted); }
-
-  /* Right Content */
   .content { flex: 1; min-width: 0; }
-  .content h1 {
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 18px;
-  }
-  .content p {
-    margin-bottom: 15px;
-    font-size: 16px;
-  }
-  .content a {
-    color: var(--accent);
-    text-decoration: none;
-    transition: color .15s;
-  }
+  .content a { color: var(--accent); text-decoration: none; transition: color .15s; }
   .content a:hover { color: var(--accent-hover); text-decoration: underline; }
-  .content ul {
-    margin: 0 0 16px 0;
-    padding-left: 22px;
+  .section-title {
+    font-size: 20px; font-weight: 700;
+    padding-bottom: 8px; border-bottom: 1px solid var(--line);
+    margin-bottom: 20px;
   }
-  .content ul li { margin-bottom: 7px; }
-
-  .news-header {
-    font-weight: 700;
-    font-size: 18px;
-    margin: 32px 0 12px;
-  }
-  .news-item {
-    margin-bottom: 10px;
-    font-size: 15.5px;
-  }
-  .news-date { font-weight: 700; }
-
-  .section { margin-top: 40px; }
-  .section h2 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 18px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--line);
-  }
+  .section-title + .section-title { margin-top: 36px; }
   .pub { margin-bottom: 22px; }
-  .pub .title { font-weight: 600; }
+  .pub .title { font-weight: 600; font-size: 16px; }
   .pub .authors { color: var(--muted); font-size: 15px; }
   .pub .authors .me { color: var(--ink); font-weight: 600; }
   .pub .venue { color: var(--muted); font-size: 15px; font-style: italic; }
   .pub .plinks { font-size: 14px; margin-top: 4px; }
   .pub .plinks a { color: var(--accent); text-decoration: none; }
   .pub .plinks a:hover { text-decoration: underline; }
-
-  footer {
-    margin-top: 56px;
-    font-size: 13px;
-    color: var(--muted);
-  }
+  .talk { margin-bottom: 16px; font-size: 15.5px; line-height: 1.55; }
+  .talk .talk-title { font-weight: 600; }
+  .talk .talk-meta { color: var(--muted); }
+  .talk .talk-meta em { font-style: italic; }
+  .talk .talk-links { font-size: 14px; }
+  .talk .talk-links a { color: var(--accent); text-decoration: none; }
+  .talk .talk-links a:hover { text-decoration: underline; }
+  footer { margin-top: 56px; font-size: 13px; color: var(--muted); }
   footer a { color: var(--muted); }
-
   a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
-
   @media (max-width: 680px) {
     .outer { flex-direction: column; gap: 28px; padding: 32px 20px 56px; }
     .sidebar { width: 100%; }
@@ -215,7 +116,7 @@
     <a class="site-name" href="index.html">Yuxin Wang&thinsp;<span style="font-weight:400;font-family:'SimSun','宋体',serif;">王语馨</span></a>
     <ul class="nav-links">
       <li><a href="publications.html">Publications</a></li>
-      <li><a href="talks.html">Talks</a></li>
+      <li><a href="talks.html" class="active">Talks</a></li>
       <li><a href="cv.html">CV</a></li>
     </ul>
   </div>
@@ -226,10 +127,8 @@
   <aside class="sidebar">
     <img class="photo" src="image.png" alt="Yuxin Wang"
          onerror="this.outerHTML='<div class=&quot;monogram&quot; aria-label=&quot;Yuxin Wang&quot;>YW</div>'">
-
     <div class="s-name">Yuxin Wang <span style="font-weight:400;color:var(--muted);font-family:'SimSun','宋体',serif;">王语馨</span></div>
     <div class="s-title">PhD Student in Causal Machine Learning</div>
-
     <ul class="s-links">
       <li>
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -267,43 +166,24 @@
   </aside>
 
   <main class="content">
-    <h1>Yuxin Wang <span style="font-weight:400;font-size:20px;color:var(--muted);font-family:'SimSun','宋体',serif;">王语馨</span></h1>
 
-    <p>
-      I am a PhD student in Computer Science at LMU Munich, in the Institute of AI in Management, supervised by  <a href="https://www.som.lmu.de/ai/en/institute/contact-page/stefan-feuerriegel-840c1071.html">Prof. Dr. Stefan Feuerriegel</a>. I am  affiliated with the Munich Center for Machine
-      Learning (<a href="https://mcml.ai/">MCML</a>) and relAI (<a href="https://zuseschoolrelai.de/">MCML</a>). My research is in causal machine learning,
-      semiparametric estimation, multi-fidelity Gaussian Process, with a growing focus on applications to LLM alignment and safety. More specifically, my research interests span:
-    </p>
+    <div class="section-title">Talks</div>
 
-    <ul>
-      <li>Semiparametric &amp; debiased ML: efficient influence functions, doubly robust estimation, and Neyman-orthogonal methods for treatment effects</li>
-      <li>Causal survival analysis: partial identification and CATE bounds for time-to-event outcomes under informative censoring</li>
-      <li>Causal inference for LLM alignment: off-policy evaluation, policy learning, and safety from preference and observational data</li>
-      <li>Applications in medicine and economics</li>
-    </ul>
-
-    <div class="news-header">News!</div>
-    <div class="news-item">
-      <span class="news-date">[06/18/2026]</span> I am co-organizing the <a href="https://mcml.ai/events/2026-08-13-workshop-casual-ml/"><em>MCML Causal Machine Learning Workshop</em></a>! Submissions are welcome.
-    </div>
-    <div class="news-item">
-      <span class="news-date">[05/28/2026]</span> Our paper <a href="publications.html"><em>Causal Methods for LLM Development and Evaluation</em></a> got accepted at the KDD 2026 Blue Sky Track!
-    </div>
-    <div class="news-item">
-      <span class="news-date">[05/13/2026]</span> Received the ICML 2026 Gold Reviewer Award!
-    </div>
-    <div class="news-item">
-      <span class="news-date">[02/26/2026]</span> Gave a talk on <a href="publications.html"><em>Assessing the Robustness of Heterogeneous Treatment Effects in Survival Analysis under Informative Censoring</em></a> at Tsinghua University, Beijing.
-    </div>
-    <div class="news-item">
-      <span class="news-date">[09/10/2025]</span> Our paper <a href="publications.html"><em>Assessing the Robustness of Heterogeneous Treatment Effects in Survival Analysis under Informative Censoring</em></a> got accepted as an oral presentation at the CauScien Workshop of NeurIPS 2025!
+    <div class="talk">
+      <div class="talk-title">Assessing the Robustness of Heterogeneous Treatment Effects in Survival Analysis under Informative Censoring</div>
+      <div class="talk-meta"><em>Tsinghua University</em>. Beijing, China. February 26, 2026.</div>
     </div>
 
-    <footer>
-      <a href="impressum.html">Impressum</a> &nbsp;&middot;&nbsp;
-      <a href="datenschutz.html">Datenschutzerkl&auml;rung</a><br>
-      &copy; <span id="yr"></span> Yuxin Wang
-    </footer>
+    <div class="talk">
+      <div class="talk-title">How reliable are treatment effects in clinical trials with dropout?</div>
+      <div class="talk-meta">Oral presentation. <em>CauScien Workshop, NeurIPS 2025</em>. San Diego, USA. 2025.</div>
+    </div>
+
+      <footer>
+        <a href="impressum.html">Impressum</a> &nbsp;&middot;&nbsp;
+        <a href="datenschutz.html">Datenschutzerkl&auml;rung</a><br>
+        &copy; <span id="yr"></span> Yuxin Wang
+      </footer>
   </main>
 
 </div>
